@@ -150,21 +150,21 @@ from sure import expect
 
 @httpretty.activate
 def test_rotating_responses():
-    httpretty.register_uri(httpretty.GET, "http://github.com/gabrielfalcao/httpretty",
+    httpretty.register_uri(httpretty.GET, "http://github.com/httpretty/httpretty",
                            responses=[
                                httpretty.Response(body="first response", status=201),
                                httpretty.Response(body='second and last response', status=202),
                             ])
 
-    response1 = requests.get('http://github.com/gabrielfalcao/httpretty')
+    response1 = requests.get('http://github.com/httpretty/httpretty')
     expect(response1.status_code).to.equal(201)
     expect(response1.text).to.equal('first response')
 
-    response2 = requests.get('http://github.com/gabrielfalcao/httpretty')
+    response2 = requests.get('http://github.com/httpretty/httpretty')
     expect(response2.status_code).to.equal(202)
     expect(response2.text).to.equal('second and last response')
 
-    response3 = requests.get('http://github.com/gabrielfalcao/httpretty')
+    response3 = requests.get('http://github.com/httpretty/httpretty')
 
     expect(response3.status_code).to.equal(202)
     expect(response3.text).to.equal('second and last response')
