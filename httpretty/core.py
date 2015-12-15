@@ -652,7 +652,7 @@ class Entry(BaseClass):
                                        'text/plain; charset=utf-8')
 
             content_length = headers.pop('content-length',
-                                         byte_type(self.body_length))
+                                         self.body_length)
 
             string_list.append('content-type: %s' % content_type)
             if not self.streaming:
@@ -882,7 +882,7 @@ class httpretty(HttpBaseClass):
     def match_uriinfo(cls, info):
         items = sorted(
             cls._entries.items(),
-            key=lambda (matcher, _): matcher.priority,
+            key=lambda matcher_req: matcher_req[0].priority,
             reverse=True,
         )
         for matcher, value in items:
