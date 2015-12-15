@@ -1,4 +1,4 @@
-# HTTPretty 0.8.10
+# HTTPretty 0.8.11
 
 ![https://s3-us-west-2.amazonaws.com/s.cdpn.io/18885/httpretty-logo_1.svg](https://s3-us-west-2.amazonaws.com/s.cdpn.io/18885/httpretty-logo_1.svg)
 [![tip for next commit](http://tip4commit.com/projects/133.svg)](http://tip4commit.com/projects/133)
@@ -492,7 +492,7 @@ mkvirtualenv --distribute --no-site-packages HTTPretty
 ## install the dependencies
 
 ```console
-pip install -r requirements/dev.txt
+pip install -r requirements.txt
 ```
 
 ## next steps:
@@ -508,7 +508,7 @@ make unit functional
 # License
 
     <HTTPretty - HTTP client mock for Python>
-    Copyright (C) <2011-2013>  Gabriel Falcão <gabriel@nacaolivre.org>
+    Copyright (C) <2011-2015>  Gabriel Falcão <gabriel@nacaolivre.org>
 
     Permission is hereby granted, free of charge, to any person
     obtaining a copy of this software and associated documentation
