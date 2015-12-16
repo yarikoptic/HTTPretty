@@ -25,7 +25,7 @@ test: unit functional acceptance
 
 lint:
 	@echo "Checking code style ..."
-	@flake8 httpretty
+	@flake8 --show-source --ignore=F821,E901 httpretty
 
 unit: prepare lint
 	@echo "Running unit tests ..."
@@ -33,7 +33,7 @@ unit: prepare lint
 
 functional: prepare
 	@echo "Running functional tests ..."
-	@nosetests --rednose -x --with-randomly --with-coverage --cover-package=httpretty -s tests/functional
+	@nosetests --rednose -x --with-coverage --cover-package=httpretty -s tests/functional
 
 acceptance: prepare
 	@echo "Running documentation tests tests ..."
